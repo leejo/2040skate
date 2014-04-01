@@ -63,18 +63,17 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   var outputtext = new Array();
   outputtext[0] = "";
-  outputtext[1] = "electron";
-  outputtext[2] = "electron neutrino";
-  outputtext[3] = "muon";
-  outputtext[4] = "muon neutrino";
-  outputtext[5] = "tau";
-  outputtext[6] = "tau neutrino";
-  outputtext[7] = "gluon";
-  outputtext[8] = "photon";
-  outputtext[9] = "Z boson";
-  outputtext[10] = "W boson";
-  outputtext[11] = "Higgs Boson";
-
+  outputtext[1] = "Kickflip";
+  outputtext[2] = "Fakie flip";
+  outputtext[3] = "360 flip";
+  outputtext[4] = "Switch heel";
+  outputtext[5] = "Half cab flip";
+  outputtext[6] = "BS 360";
+  outputtext[7] = "Fakie 360 flip";
+  outputtext[8] = "Half cab heel";
+  outputtext[9] = "Switch BS heel";
+  outputtext[10] = "Switch FS flip";
+  outputtext[11] = "FS Bigspin heel";
 
   inner.classList.add("tile-inner");
   inner.textContent = outputtext[(Math.log(tile.value) / Math.LN2)] || '';
@@ -141,7 +140,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "You'll get a Nobel Prize!" : "Er... LHC breaks down......";
+  var message = won ? "Wow! Get yourself to The Berrics" : "Berra says you suck!";
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
