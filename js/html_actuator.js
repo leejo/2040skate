@@ -41,8 +41,10 @@ HTMLActuator.prototype.continue = function () {
 };
 
 HTMLActuator.prototype.clearContainer = function (container) {
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
+  if (container) {
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
   }
 };
 
@@ -123,19 +125,14 @@ HTMLActuator.prototype.updateScore = function (score) {
   var difference = score - this.score;
   this.score = score;
 
-  this.scoreContainer.textContent = this.score + " GeV";
-
   if (difference > 0) {
     var addition = document.createElement("div");
     addition.classList.add("score-addition");
     addition.textContent = "+" + difference;
-
-    this.scoreContainer.appendChild(addition);
   }
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = bestScore + " GeV";
 };
 
 HTMLActuator.prototype.message = function (won) {
